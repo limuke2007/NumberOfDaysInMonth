@@ -2,10 +2,10 @@ package java_masterclass;
 
 public class NumberOfDaysInMonth {
 
-    private static boolean isLeapYear(int year) {
+    private static boolean isLeapYear(int year) {                                               
         if (year < 1 || year > 9999) {
             return false;
-        } else return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+        } else return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;            // 判断是否为闰年
     }
 
     private static int getDaysInMonth(int month, int year) {
@@ -18,17 +18,17 @@ public class NumberOfDaysInMonth {
         switch (month) {
 
 
-            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:                   // 一三五七八十腊，三十一天永不差；
                 daysInMonth = 31;
                 break;
 
 
 
-            case 4: case 6: case 9: case 11:
+            case 4: case 6: case 9: case 11:                                            // 四六九冬三十整，
                 daysInMonth = 30;
                 break;
 
-            case 2:
+            case 2:                                                                     // 惟有二月二十八，闰年还要把一日加
                 if (isLeapYear(year)) {
                     daysInMonth = 29;
                 } else {
